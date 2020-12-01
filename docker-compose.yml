@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  web:
+    build: .
+    ports:
+      - "3332:3332"
+    environment:
+      DEBUG: daf*
+    command: ["yarn", "daf", "server", "--config=/config/agent-local.yml"]
+    volumes:
+      - ./config:/config

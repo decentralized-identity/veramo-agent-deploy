@@ -1,0 +1,30 @@
+{
+    "name": "Daf Agent",
+    "description": "Minimal deployment of daf-cli agent server to Heroku",
+    "repository": "https://github.com/uport-project/daf-agent-deploy",
+    "keywords": [
+      "node",
+      "daf",
+      "identity",
+      "verifiable-credentials"
+    ],
+    "addons": ["heroku-postgresql:hobby-dev"],
+    "env": {
+      "AGENT_URL": {
+        "description": "The url for which your DID will be based on",
+        "value": "https://appname.herokuapp.com"
+      },
+      "API_KEY": {
+        "description": "A secret key for verifying requests",
+        "generator": "secret"
+      },
+      "SECRET_KEY": {
+        "description": "Secret key for database encryption",
+        "generator": "secret"
+      },
+      "AGENT_ENDPOINT": {
+        "description": "Prefix for agent endpoints",
+        "value": "/agent"
+      }
+    }
+  }
