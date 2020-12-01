@@ -38,11 +38,11 @@ You will need to fork this repo and add the following key/value pair to the root
 }
 ```
 
-## Deploy to Heroku Pipelines
+## Deploy to Azure Pipelines
 
 Coming soon
 
-## Deploy to Heroku Pipelines using docker
+## Deploy to Azure Pipelines using docker
 
 Coming soon
 
