@@ -1,7 +1,8 @@
 server:
   baseUrl:
     $env: AGENT_URL
-  port: PORT
+  port:
+    $env: PORT
   apiKey:
     $env: API_KEY
   schemaPath: /open-api.json
