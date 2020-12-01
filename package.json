@@ -7,7 +7,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "start": "NODE_ENV=production yarn daf server --config=./config/agent.yml",
-    "dev": "yarn daf server --config=./config/agent-local.yml"
+    "dev": "yarn daf server --config=./config/agent-local.yml -p 8000"
   },
   "dependencies": {
     "daf-cli": "^7.0.0-beta.51"

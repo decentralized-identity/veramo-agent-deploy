@@ -22,6 +22,10 @@ Used for encrypting the database
 
 The url where the agent will be accessible from
 
+#### `PORT`
+
+The port to run the server on
+
 ## Deploy to Heroku
 
 You can deploy this directly to Heroku by clicking this button:
