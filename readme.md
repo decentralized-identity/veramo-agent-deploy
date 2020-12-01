@@ -4,7 +4,7 @@
 
 ## Environment variables
 
-These are the default environment variables.
+These are the default environment variables use in the production config.
 
 #### `AGENT_URL`
 
@@ -25,6 +25,10 @@ The url where the agent will be accessible from
 #### `PORT`
 
 The port to run the server on
+
+#### `DATABASE_URL`
+
+The database connection string for Postgres
 
 ## Deploy to Heroku
 
