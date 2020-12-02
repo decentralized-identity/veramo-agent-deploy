@@ -1,12 +1,12 @@
 name: CI to Docker Hub
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: master
-    
- # Allows you to run this workflow manually from the Actions tab
+
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -17,14 +17,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    
-      - name: Check Out Repo 
+      - name: Check Out Repo
         uses: actions/checkout@v2
-      
+
+      - uses: mstachniuk/ci-skip@v1
+        with:
+          fail-fast: true
+
       - name: Set up Docker Buildx
         id: buildx
         uses: docker/setup-buildx-action@v1
-        
+
       - name: Cache Docker layers
         uses: actions/cache@v2
         with:
@@ -52,5 +55,3 @@ jobs:
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
-      
-      
