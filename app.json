@@ -1,10 +1,10 @@
 {
-    "name": "Daf Agent",
-    "description": "Minimal deployment of daf-cli agent server to Heroku",
-    "repository": "https://github.com/uport-project/daf-agent-deploy",
+    "name": "Veramo Agent",
+    "description": "Minimal deployment of @veramo/cli agent server to Heroku",
+    "repository": "https://github.com/uport-project/veramo-agent-deploy",
     "keywords": [
       "node",
-      "daf",
+      "veramo",
       "identity",
       "verifiable-credentials"
     ],

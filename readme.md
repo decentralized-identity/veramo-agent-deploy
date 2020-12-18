@@ -1,6 +1,6 @@
-# Daf Agent Deploy
+# Veramo Agent Deploy
 
-**The official Daf Docker agent is built from this this source.**
+**The official Veramo Docker agent is built from this this source.**
 
 ## Environment variables
 

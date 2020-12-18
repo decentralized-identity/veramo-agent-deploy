@@ -24,41 +24,41 @@ dbConnection:
       synchronize: true
       logging: false
       entities:
-        $require: daf-typeorm?t=object#Entities
+        $require: "@veramo/data-store?t=object#Entities"
 messageHandler:
-  $require: daf-message-handler#MessageHandler
+  $require: "@veramo/message-handler#MessageHandler"
   $args:
     - messageHandlers:
-        - $require: daf-did-comm#DIDCommMessageHandler
-        - $require: daf-did-jwt#JwtMessageHandler
-        - $require: daf-w3c#W3cMessageHandler
-        - $require: daf-selective-disclosure#SdrMessageHandler
+        - $require: "@veramo/did-comm#DIDCommMessageHandler"
+        - $require: "@veramo/did-jwt#JwtMessageHandler"
+        - $require: "@veramo/credential-w3c#W3cMessageHandler"
+        - $require: "@veramo/selective-disclosure#SdrMessageHandler"
 agent:
-  $require: daf-core#Agent
+  $require: "@veramo/core#Agent"
   $args:
     - plugins:
-        - $require: daf-key-manager#KeyManager
+        - $require: "@veramo/key-manager#KeyManager"
           $args:
             - store:
-                $require: daf-typeorm#KeyStore
+                $require: "@veramo/data-store#KeyStore"
                 $args:
                   - $ref: /dbConnection
-                  - $require: daf-libsodium#SecretBox
+                  - $require: "@veramo/kms-local#SecretBox"
                     $args:
                       - $ref: /constants/secretKey
               kms:
                 local:
-                  $require: daf-libsodium#KeyManagementSystem
-        - $require: daf-identity-manager#IdentityManager
+                  $require: "@veramo/kms-local#KeyManagementSystem"
+        - $require: "@veramo/did-manager#DIDManager"
           $args:
             - store:
-                $require: daf-typeorm#IdentityStore
+                $require: "@veramo/data-store#DIDStore"
                 $args:
                   - $ref: /dbConnection
               defaultProvider: did:ethr:rinkeby
               providers:
                 did:ethr:
-                  $require: daf-ethr-did#EthrIdentityProvider
+                  $require: "@veramo/did-provider-ethr#EthrDIDProvider"
                   $args:
                     - defaultKms: local
                       network: mainnet
@@ -66,7 +66,7 @@ agent:
                       gas: 10001
                       ttl: 31104001
                 did:ethr:rinkeby:
-                  $require: daf-ethr-did#EthrIdentityProvider
+                  $require: "@veramo/did-provider-ethr#EthrDIDProvider"
                   $args:
                     - defaultKms: local
                       network: rinkeby
@@ -74,7 +74,7 @@ agent:
                       gas: 10001
                       ttl: 31104001
                 did:ethr:ropsten:
-                  $require: daf-ethr-did#EthrIdentityProvider
+                  $require: "@veramo/did-provider-ethr#EthrDIDProvider"
                   $args:
                     - defaultKms: local
                       network: ropsten
@@ -82,7 +82,7 @@ agent:
                       gas: 10001
                       ttl: 31104001
                 did:ethr:kovan:
-                  $require: daf-ethr-did#EthrIdentityProvider
+                  $require: "@veramo/did-provider-ethr#EthrDIDProvider"
                   $args:
                     - defaultKms: local
                       network: kovan
@@ -90,24 +90,18 @@ agent:
                       gas: 10001
                       ttl: 31104001
                 did:ethr:goerli:
-                  $require: daf-ethr-did#EthrIdentityProvider
+                  $require: "@veramo/did-provider-ethr#EthrDIDProvider"
                   $args:
                     - defaultKms: local
                       network: goerli
                       rpcUrl: https://goerli.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
                       gas: 10001
                       ttl: 31104001
-                # did:elem:ropsten:
-                #   $require: daf-elem-did#ElemIdentityProvider
-                #   $args:
-                #     - defaultKms: local
-                #       network: ropsten
-                #       apiUrl: https://element-did.com/api/v1/sidetree
                 did:web:
-                  $require: daf-web-did#WebIdentityProvider
+                  $require: "@veramo/did-provider-web#WebDIDProvider"
                   $args:
                     - defaultKms: local
-        - $require: daf-resolver#DafResolver
+        - $require: "@veramo/did-resolver#DIDResolverPlugin"
           $args:
             - networks:
                 - name: mainnet
@@ -123,16 +117,13 @@ agent:
                 - name: private
                   rpcUrl: http://localhost:8545/
                   registry: "0x05cc574b19a3c11308f761b3d7263bd8608bc532"
-        # - $require: daf-resolver-universal#DafUniversalResolver
-        #   $args:
-        #     - url: https://dev.uniresolver.io/1.0/identifiers/
-        - $require: daf-typeorm#DataStore
+        - $require: "@veramo/data-store#DataStore"
           $args:
             - $ref: /dbConnection
-        - $require: daf-typeorm#DataStoreORM
+        - $require: "@veramo/data-store#DataStoreORM"
           $args:
             - $ref: /dbConnection
         - $ref: /messageHandler
-        - $require: daf-did-comm#DIDComm
-        - $require: daf-w3c#CredentialIssuer
-        - $require: daf-selective-disclosure#SelectiveDisclosure
+        - $require: "@veramo/did-comm#DIDComm"
+        - $require: "@veramo/credential-w3c#CredentialIssuer"
+        - $require: "@veramo/selective-disclosure#SelectiveDisclosure"
