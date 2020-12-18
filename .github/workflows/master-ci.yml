@@ -50,7 +50,7 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: uport/daf:beta
+          tags: uport/veramo:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
 
