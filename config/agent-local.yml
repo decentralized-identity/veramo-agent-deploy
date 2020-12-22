@@ -5,7 +5,7 @@ server:
   schemaPath: /open-api.json
   apiBasePath: /agent
   apiDocsPath: /api-docs
-  defaultIdentity:
+  defaultDID:
     create: true
     messagingServiceEndpoint: /messaging
   ngrok:
@@ -54,7 +54,33 @@ ethr-did-resolver:
           rpcUrl: https://goerli.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
         - name: private
           rpcUrl: http://localhost:8545/
-          registry: "0x05cc574b19a3c11308f761b3d7263bd8608bc532"
+          registry: '0x05cc574b19a3c11308f761b3d7263bd8608bc532'
+
+web-did-resolver:
+  $require: web-did-resolver?t=function&p=/web#getResolver
+
+universal-resolver:
+  $require: '@veramo/did-resolver#UniversalResolver'
+  $args:
+    - url: https://dev.uniresolver.io/1.0/identifiers/
+
+resolver:
+  $require: did-resolver#Resolver
+  $args:
+    - ethr:
+        $ref: /ethr-did-resolver
+      web:
+        $ref: /web-did-resolver
+      io:
+        $ref: /universal-resolver
+      elem:
+        $ref: /universal-resolver
+      key:
+        $ref: /universal-resolver
+      ion:
+        $ref: /universal-resolver
+      sov:
+        $ref: /universal-resolver
 
 agent:
   $require: "@veramo/core#Agent"
@@ -130,25 +156,10 @@ agent:
                   $require: "@veramo/did-provider-web#WebDIDProvider"
                   $args:
                     - defaultKms: local
-        - $require: "@veramo/did-resolver#DIDResolverPlugin"
+        - $require: '@veramo/did-resolver#DIDResolverPlugin'
           $args:
-            - networks:
-                - name: mainnet
-                  rpcUrl: https://mainnet.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
-                - name: rinkeby
-                  rpcUrl: https://rinkeby.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
-                - name: ropsten
-                  rpcUrl: https://ropsten.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
-                - name: kovan
-                  rpcUrl: https://kovan.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
-                - name: goerli
-                  rpcUrl: https://goerli.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
-                - name: private
-                  rpcUrl: http://localhost:8545/
-                  registry: "0x05cc574b19a3c11308f761b3d7263bd8608bc532"
-        # - $require: daf-resolver-universal#DafUniversalResolver
-        #   $args:
-        #     - url: https://dev.uniresolver.io/1.0/identifiers/
+            - resolver:
+                $ref: /resolver
         - $require: "@veramo/data-store#DataStore"
           $args:
             - $ref: /dbConnection
