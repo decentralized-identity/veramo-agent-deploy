@@ -23,6 +23,9 @@ dbConnection:
         $env: DATABASE_URL
       synchronize: true
       logging: false
+      ## Heroku Personal Account (Not required for team account)
+      ssl:
+        rejectUnauthorized: false
       entities:
         $require: "@veramo/data-store?t=object#Entities"
 messageHandler:
@@ -50,13 +53,13 @@ ethr-did-resolver:
           rpcUrl: https://goerli.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
         - name: private
           rpcUrl: http://localhost:8545/
-          registry: '0x05cc574b19a3c11308f761b3d7263bd8608bc532'
+          registry: "0x05cc574b19a3c11308f761b3d7263bd8608bc532"
 
 web-did-resolver:
   $require: web-did-resolver?t=function&p=/web#getResolver
 
 universal-resolver:
-  $require: '@veramo/did-resolver#UniversalResolver'
+  $require: "@veramo/did-resolver#UniversalResolver"
   $args:
     - url: https://dev.uniresolver.io/1.0/identifiers/
 
@@ -146,7 +149,7 @@ agent:
                   $require: "@veramo/did-provider-web#WebDIDProvider"
                   $args:
                     - defaultKms: local
-        - $require: '@veramo/did-resolver#DIDResolverPlugin'
+        - $require: "@veramo/did-resolver#DIDResolverPlugin"
           $args:
             - resolver:
                 $ref: /resolver
