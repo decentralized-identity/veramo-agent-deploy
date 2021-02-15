@@ -7,7 +7,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "start": "NODE_ENV=production yarn veramo server --config=./config/agent.yml",
-    "dev": "yarn veramo server --config=./config/agent-local.yml -p 8000"
+    "dev": "yarn veramo server --config=./config/agent-local.yml"
   },
   "dependencies": {
     "@veramo/cli": "^1.0.1"
