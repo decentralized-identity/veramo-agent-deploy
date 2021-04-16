@@ -139,7 +139,7 @@ server:
     - $require: "@veramo/remote-server?t=function#createDefaultDid"
       $args:
         - agent:
-            $ref: /constants/agentPath
+            $ref: /agent
           baseUrl:
             $ref: /constants/baseUrl
           messagingServiceEndpoint:
