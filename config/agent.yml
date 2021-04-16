@@ -107,7 +107,8 @@ server:
     - - /agent
       - $require: "@veramo/remote-server?t=function#apiKeyAuth"
         $args:
-          - apiKey: test123
+          - apiKey:
+              $ref: /constants/apiKey
       - $require: "@veramo/remote-server?t=function#AgentRouter"
         $args:
           - exposedMethods:
