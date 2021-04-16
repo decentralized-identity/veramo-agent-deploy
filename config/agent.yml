@@ -9,7 +9,7 @@ constants:
     $env: API_KEY
   secretKey:
     $env: SECRET_KEY
-  agentpath:
+  agentPath:
     $env: AGENT_PATH
   messagingEndpoint:
     $env: MESSAGING_PATH
