@@ -66,7 +66,7 @@ dbConnection:
   $require: typeorm?t=function#createConnection
   $args:
     - type: postgres
-      database:
+      url:
         $ref: /constants/databaseUrl
       synchronize: true
       logging: false
