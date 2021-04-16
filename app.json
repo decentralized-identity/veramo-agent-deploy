@@ -10,9 +10,9 @@
     ],
     "addons": ["heroku-postgresql:hobby-dev"],
     "env": {
-      "AGENT_URL": {
+      "BASE_URL": {
         "description": "The url for which your DID will be based on",
-        "value": "https://appname.herokuapp.com"
+        "value": "https://APP_NAME.herokuapp.com"
       },
       "API_KEY": {
         "description": "A secret key for verifying requests",
@@ -22,9 +22,13 @@
         "description": "Secret key for database encryption",
         "generator": "secret"
       },
-      "AGENT_ENDPOINT": {
-        "description": "Prefix for agent endpoints",
+      "AGENT_PATH": {
+        "description": "The path where the agent will be served from",
         "value": "/agent"
+      },
+      "MESSAGING_PATH": {
+        "description": "The messaging endpoint for your agent",
+        "value": "/messaging"
       }
     }
   }
