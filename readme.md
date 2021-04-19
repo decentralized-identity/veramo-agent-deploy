@@ -57,3 +57,10 @@ Coming soon
 ## Deploy to AWS
 
 Coming soon
+
+
+### updating all dependencies
+
+```bash
+yarn add @veramo/cli@experimental @veramo/core@experimental @veramo/credential-w3c@experimental @veramo/data-store@experimental @veramo/did-comm@experimental @veramo/did-jwt@experimental @veramo/did-manager@experimental @veramo/did-provider-ethr@experimental @veramo/did-provider-web@experimental @veramo/key-manager@experimental @veramo/kms-local@experimental @veramo/remote-client@experimental @veramo/remote-server@experimental @veramo/selective-disclosure@experimental @veramo/url-handler@experimental
+```

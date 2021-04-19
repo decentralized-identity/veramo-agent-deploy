@@ -10,6 +10,20 @@
     "dev": "yarn veramo server --config=./config/agent-local.yml"
   },
   "dependencies": {
-    "@veramo/cli": "^1.1.1-experimental.67"
+    "@veramo/cli": "^1.1.1-experimental.69",
+    "@veramo/core": "^1.1.1-experimental.69",
+    "@veramo/credential-w3c": "^1.1.1-experimental.69",
+    "@veramo/data-store": "^1.1.1-experimental.69",
+    "@veramo/did-comm": "^1.1.1-experimental.69",
+    "@veramo/did-jwt": "^1.1.1-experimental.69",
+    "@veramo/did-manager": "^1.1.1-experimental.69",
+    "@veramo/did-provider-ethr": "^1.1.1-experimental.69",
+    "@veramo/did-provider-web": "^1.1.1-experimental.69",
+    "@veramo/key-manager": "^1.1.1-experimental.69",
+    "@veramo/kms-local": "^1.1.1-experimental.69",
+    "@veramo/remote-client": "^1.1.1-experimental.69",
+    "@veramo/remote-server": "^1.1.1-experimental.69",
+    "@veramo/selective-disclosure": "^1.1.1-experimental.69",
+    "@veramo/url-handler": "^1.1.1-experimental.69"
   }
 }
