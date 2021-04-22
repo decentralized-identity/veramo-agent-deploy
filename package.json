@@ -10,6 +10,8 @@
     "dev": "yarn veramo server --config=./config/agent-local.yml"
   },
   "dependencies": {
-    "@veramo/cli": "^1.1.1-unstable.75"
+    "@veramo/cli": "^1.1.1-unstable.89",
+    "@veramo/did-provider-ion": "^1.1.1-unstable.89",
+    "@veramo/did-provider-key": "^1.1.1-unstable.89"
   }
 }

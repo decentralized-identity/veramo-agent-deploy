@@ -62,5 +62,5 @@ Coming soon
 ### updating all dependencies
 
 ```bash
-yarn add @veramo/cli@unstable
+yarn add @veramo/cli@unstable @veramo/did-provider-ion@unstable @veramo/did-provider-key@unstable
 ```

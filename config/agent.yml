@@ -170,15 +170,21 @@ didResolver:
             web:
               $ref: /web-did-resolver
             key:
-              $ref: /universal-resolver
+              $ref: /key-did-resolver
             elem:
               $ref: /universal-resolver
             io:
               $ref: /universal-resolver
             ion:
-              $ref: /universal-resolver
+              $ref: /ion-did-resolver
             sov:
               $ref: /universal-resolver
+
+ion-did-resolver:
+  $require: '@veramo/did-provider-ion?t=function&p=/ion#getDidIonResolver'
+
+key-did-resolver:
+  $require: '@veramo/did-provider-key?t=function&p=/key#getDidKeyResolver'
 
 ethr-did-resolver:
   $require: ethr-did-resolver?t=function&p=/ethr#getResolver
@@ -270,6 +276,14 @@ didManager:
               ttl: 31104001
         did:web:
           $require: "@veramo/did-provider-web#WebDIDProvider"
+          $args:
+            - defaultKms: local
+        did:ion:
+          $require: "@veramo/did-provider-ion#IonDIDProvider"
+          $args:
+            - defaultKms: local
+        did:key:
+          $require: '@veramo/did-provider-key#KeyDIDProvider'
           $args:
             - defaultKms: local
 
