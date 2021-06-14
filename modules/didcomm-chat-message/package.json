@@ -6,7 +6,8 @@
   "types": "build/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "generate-plugin-schema": "yarn veramo dev generate-plugin-schema"
+    "generate-plugin-schema": "yarn veramo dev generate-plugin-schema",
+    "postinstall": "yarn build"
   },
   "dependencies": {
     "@veramo/core": "^1.2.0",
