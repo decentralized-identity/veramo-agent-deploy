@@ -853,6 +853,18 @@
     cross-fetch "^3.1.4"
     debug "^4.1.1"
 
+"@veramo/didcomm-chat-message@file:modules/didcomm-chat-message":
+  version "1.2.0"
+  dependencies:
+    "@veramo/core" "^1.2.0"
+    "@veramo/credential-w3c" "^1.2.0"
+    "@veramo/data-store" "^1.2.0"
+    "@veramo/did-jwt" "^1.2.0"
+    "@veramo/message-handler" "^1.2.0"
+    blakejs "^1.1.0"
+    debug "^4.1.1"
+    did-jwt "5.6.0"
+
 "@veramo/key-manager@^1.1.3-next.46+8ef2563b", "@veramo/key-manager@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@veramo/key-manager/-/key-manager-1.2.0.tgz#0dc9d4dd4bf2ca51b87c64b966d0ea74f6b2424e"
@@ -1193,6 +1205,11 @@ cacheable-request@^7.0.1:
     normalize-url "^4.1.0"
     responselike "^2.0.0"
 
+canonicalize@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/canonicalize/-/canonicalize-1.0.5.tgz#b43b390ce981d397908bb847c3a8d9614323a47b"
+  integrity sha512-mAjKJPIyP0xqqv6IAkvso07StOmz6cmGtNDg3pXCSzXVZOqka7StIkAhJl/zHOi4M2CgpYfD6aeRWbnrmtvBEA==
+
 caseless@~0.12.0:
   version "0.12.0"
   resolved "https://registry.npmjs.org/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
@@ -1478,6 +1495,22 @@ did-jwt@5.2.0, did-jwt@^5.2.0:
     "@stablelib/sha256" "^1.0.0"
     "@stablelib/x25519" "^1.0.0"
     "@stablelib/xchacha20poly1305" "^1.0.0"
+    did-resolver "^3.1.0"
+    elliptic "^6.5.4"
+    js-sha3 "^0.8.0"
+    uint8arrays "^2.1.3"
+
+did-jwt@5.6.0:
+  version "5.6.0"
+  resolved "https://registry.yarnpkg.com/did-jwt/-/did-jwt-5.6.0.tgz#aff04b19550c3b5175044f3f893a33da36777a9a"
+  integrity sha512-w4pvegvyOicfW2gvjUWyf0ggJV8v6NQw2OJgKNW3U3QG5ruEi3Xmv4gERRpzgGBqcCwnDuraV3NsQfTUW+kAfw==
+  dependencies:
+    "@stablelib/ed25519" "^1.0.1"
+    "@stablelib/random" "^1.0.0"
+    "@stablelib/sha256" "^1.0.0"
+    "@stablelib/x25519" "^1.0.0"
+    "@stablelib/xchacha20poly1305" "^1.0.0"
+    canonicalize "^1.0.5"
     did-resolver "^3.1.0"
     elliptic "^6.5.4"
     js-sha3 "^0.8.0"
