@@ -2,12 +2,11 @@
   "name": "@veramo/didcomm-chat-message",
   "description": "Veramo plugin.",
   "version": "1.2.0",
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "generate-plugin-schema": "yarn veramo dev generate-plugin-schema",
-    "postinstall": "yarn build"
+    "generate-plugin-schema": "yarn veramo dev generate-plugin-schema"
   },
   "dependencies": {
     "@veramo/core": "^1.2.0",
