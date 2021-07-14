@@ -885,7 +885,7 @@
   resolved "https://registry.npmjs.org/@types/zen-observable/-/zen-observable-0.8.2.tgz#808c9fa7e4517274ed555fa158f2de4b4f468e71"
   integrity sha512-HrCIVMLjE1MOozVoD86622S7aunluLb2PJdPfb3nYiEtohm8mIB/vyv0Fd37AdeMFrTUQXEunw78YloMA3Qilg==
 
-"@veramo/cli@^1.2.1-next.5":
+"@veramo/cli@1.2.1-next.5":
   version "1.2.1-next.5"
   resolved "https://registry.yarnpkg.com/@veramo/cli/-/cli-1.2.1-next.5.tgz#142fa7bdb7bc35ded6b8156013119bd787bc7351"
   integrity sha512-4CVfoHATtlHkyqj7ChuFuKVJd4QDpUirqkOuIHR/Qt/bNWvtYLtcYMs8Qolk4NydbMmJHIg7lIr3G08cxzzZLQ==
