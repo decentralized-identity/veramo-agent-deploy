@@ -13,6 +13,8 @@ constants:
     - keyManagerImport
     - keyManagerEncryptJWE
     - keyManagerDecryptJWE
+    - keyManagerSign
+    - keyManagerSharedSecret
     - keyManagerSignJWT
     - keyManagerSignEthTX
     - didManagerGetProviders
@@ -27,6 +29,8 @@ constants:
     - didManagerAddService
     - didManagerRemoveService
     - resolveDid
+    - getDIDComponentById
+    - discoverDid
     - dataStoreGetMessage
     - dataStoreSaveMessage
     - dataStoreGetVerifiableCredential
@@ -44,6 +48,9 @@ constants:
     - dataStoreORMGetVerifiablePresentations
     - dataStoreORMGetVerifiablePresentationsCount
     - handleMessage
+    - packDIDCommMessage
+    - unpackDIDCommMessage
+    - sendDIDCommMessage
     - sendMessageDIDCommAlpha1
     - createVerifiablePresentation
     - createVerifiableCredential
@@ -152,7 +159,7 @@ didResolver:
             web:
               $ref: /web-did-resolver
             key:
-              $ref: /universal-resolver
+              $ref: /did-key-resolver
             elem:
               $ref: /universal-resolver
             io:
@@ -165,20 +172,7 @@ didResolver:
 ethr-did-resolver:
   $require: ethr-did-resolver?t=function&p=/ethr#getResolver
   $args:
-    - networks:
-        - name: mainnet
-          rpcUrl: https://mainnet.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
-        - name: rinkeby
-          rpcUrl: https://rinkeby.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
-        - name: ropsten
-          rpcUrl: https://ropsten.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
-        - name: kovan
-          rpcUrl: https://kovan.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
-        - name: goerli
-          rpcUrl: https://goerli.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
-        - name: private
-          rpcUrl: http://localhost:8545/
-          registry: "0x05cc574b19a3c11308f761b3d7263bd8608bc532"
+    - infuraProjectId: 5ffc47f65c4042ce847ef66a3fa70d4c
 
 web-did-resolver:
   $require: web-did-resolver?t=function&p=/web#getResolver
@@ -187,6 +181,9 @@ universal-resolver:
   $require: "@veramo/did-resolver#UniversalResolver"
   $args:
     - url: https://dev.uniresolver.io/1.0/identifiers/
+
+did-key-resolver:
+  $require: '@veramo/did-provider-key?t=function&p=/key#getDidKeyResolver'
 
 # Key Manager
 keyManager:
@@ -257,6 +254,17 @@ didManager:
           $require: "@veramo/did-provider-web#WebDIDProvider"
           $args:
             - defaultKms: local
+        did:key:
+          $require: "@veramo/did-provider-key#KeyDIDProvider"
+          $args:
+            - defaultKms: local
+
+didDiscovery:
+  $require: '@veramo/did-discovery#DIDDiscovery'
+  $args:
+    - providers:
+        - $require: '@veramo/did-manager#AliasDiscoveryProvider'
+        - $require: '@veramo/data-store#ProfileDiscoveryProvider'
 
 # Agent
 agent:
@@ -267,6 +275,7 @@ agent:
         - $ref: /keyManager
         - $ref: /didManager
         - $ref: /didResolver
+        - $ref: /didDiscovery
         - $ref: /messageHandler
         - $require: "@veramo/did-comm#DIDComm"
         - $require: "@veramo/credential-w3c#CredentialIssuer"

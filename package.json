@@ -1,7 +1,7 @@
 {
   "name": "veramo-agent-deploy",
   "version": "1.0.0",
-  "description": "General purpose Daf Agent configuration deployments",
+  "description": "General purpose Veramo Agent configuration deployments",
   "repository": "https://github.com/uport-project/veramo-agent-deploy",
   "author": "jason.healy@mesh.xyz",
   "license": "Apache-2.0",
