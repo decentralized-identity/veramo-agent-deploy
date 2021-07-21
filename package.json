@@ -10,7 +10,8 @@
     "dev": "yarn veramo server --config=./config/agent-local.yml"
   },
   "dependencies": {
-    "@veramo/cli": "^1.2.3-next.41",
-    "@veramo/didcomm-chat-message": "file:modules/didcomm-chat-message"
+    "@veramo/cli": "^2.0.1-unstable.13",
+    "@veramo/didcomm-chat-message": "file:modules/didcomm-chat-message",
+    "@veramo/message-threads": "^2.0.1-unstable.13"
   }
 }
