@@ -39,6 +39,7 @@ constants:
     - resolveDid
     - discoverDid
     - getThreads
+    - getThreadById
     - dataStoreGetMessage
     - dataStoreSaveMessage
     - dataStoreGetVerifiableCredential
@@ -157,7 +158,7 @@ messageHandler:
         - $require: "@veramo/did-jwt#JwtMessageHandler"
         - $require: "@veramo/credential-w3c#W3cMessageHandler"
         - $require: "@veramo/selective-disclosure#SdrMessageHandler"
-        - $require: "@veramo/didcomm-chat-message#DIDCommChatMessageHandler"
+        - $require: "@veramo/message-threads#DIDCommChatMessageHandler"
 
 # DID resolvers
 didResolver:
