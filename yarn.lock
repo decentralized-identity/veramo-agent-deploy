@@ -1006,10 +1006,10 @@
   resolved "https://registry.npmjs.org/@types/zen-observable/-/zen-observable-0.8.2.tgz#808c9fa7e4517274ed555fa158f2de4b4f468e71"
   integrity sha512-HrCIVMLjE1MOozVoD86622S7aunluLb2PJdPfb3nYiEtohm8mIB/vyv0Fd37AdeMFrTUQXEunw78YloMA3Qilg==
 
-"@veramo/cli@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@veramo/cli/-/cli-2.0.0.tgz#43a970bac5c07eac457f1ade07be45825ede5fd6"
-  integrity sha512-EwVFScPLJbduX+V24SH2EcNW0/+nkw+U6ts6rPNBaOO+qR/ba8Hr2A/XGaGQ33F/c/B5KDFTpNJyakRQQxKPKw==
+"@veramo/cli@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@veramo/cli/-/cli-2.0.1.tgz#dc38961f3a10fee989af55e81b1c2709c0068854"
+  integrity sha512-E/0fcgrismmxwzLC/o/6fZwnbjVCo2rxKlY0AGrfFUaaGF0KJUX1Psx+B/9kY5MoWTmZk1mgerpFc0gEJD2LKA==
   dependencies:
     "@microsoft/api-extractor" "7.18.2"
     "@microsoft/api-extractor-model" "7.13.4"
