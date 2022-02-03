@@ -6,7 +6,7 @@
 
 These are the default environment variables use in the production config.
 
-#### `AGENT_URL`
+#### `BASE_URL`
 
 Set this to your base app url. Your default web:did will be based on this when it gets created on first run.
 
@@ -18,9 +18,13 @@ Used for authorization
 
 Used for encrypting the database
 
-#### `AGENT_ENDPOINT`
+#### `AGENT_PATH`
 
-The url where the agent will be accessible from
+The path where the agent will be accessible from, default to `/agent`
+
+#### `MESSAGING_PATH`
+
+The path where the messaging will be accessible from, default to `/messaging`
 
 #### `PORT`
 
