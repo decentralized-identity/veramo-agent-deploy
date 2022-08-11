@@ -62,15 +62,17 @@ constants:
     - unpackDIDCommMessage
     - sendDIDCommMessage
     - sendMessageDIDCommAlpha1
-    - createVerifiablePresentation
     - createVerifiableCredential
+    - createVerifiablePresentation
+    - verifyCredential
+    - verifyPresentation
     - createSelectiveDisclosureRequest
     - getVerifiableCredentialsForSdr
     - validatePresentationAgainstSdr
 
 # Data base
 dbConnection:
-  $require: typeorm?t=function#createConnection
+  $require: typeorm#DataSource
   $args:
     - type: postgres
       url:
@@ -287,7 +289,7 @@ didDiscovery:
   $args:
     - providers:
         - $require: '@veramo/did-manager#AliasDiscoveryProvider'
-        - $require: '@veramo/data-store#ProfileDiscoveryProvider'
+        - $require: '@veramo/data-store#DataStoreDiscoveryProvider'
 
 # Agent
 agent:
