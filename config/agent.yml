@@ -147,6 +147,15 @@ server:
           - swaggerOptions:
               url: "/open-api.json"
 
+    # Agent explorer
+    - - $require: agent-explore?t=function#ExplorerRouter
+        # $args:
+        #   - - schemaUrl: https://example.com/open-api.json
+        #       name: Example name
+        #       apiKey: exampleKey123
+
+
+
   # Execute during server initialization
   init:
     - $require: "@veramo/remote-server?t=function#createDefaultDid"
