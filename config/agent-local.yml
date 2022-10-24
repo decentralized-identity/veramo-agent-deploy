@@ -69,7 +69,7 @@ dbConnection:
         $ref: /constants/databaseFile
       synchronize: false
       migrationsRun: true
-      migrations: 
+      migrations:
         $require: '@veramo/data-store?t=object#migrations'
       logging: false
       entities:
@@ -224,7 +224,7 @@ didManager:
         $require: "@veramo/data-store#DIDStore"
         $args:
           - $ref: /dbConnection
-      defaultProvider: did:ethr:rinkeby
+      defaultProvider: did:ethr:goerli
       providers:
         did:ethr:
           $require: "@veramo/did-provider-ethr#EthrDIDProvider"
@@ -232,30 +232,6 @@ didManager:
             - defaultKms: local
               network: mainnet
               rpcUrl: https://mainnet.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
-              gas: 1000001
-              ttl: 31104001
-        did:ethr:rinkeby:
-          $require: "@veramo/did-provider-ethr#EthrDIDProvider"
-          $args:
-            - defaultKms: local
-              network: rinkeby
-              rpcUrl: https://rinkeby.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
-              gas: 1000001
-              ttl: 31104001
-        did:ethr:ropsten:
-          $require: "@veramo/did-provider-ethr#EthrDIDProvider"
-          $args:
-            - defaultKms: local
-              network: ropsten
-              rpcUrl: https://ropsten.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
-              gas: 1000001
-              ttl: 31104001
-        did:ethr:kovan:
-          $require: "@veramo/did-provider-ethr#EthrDIDProvider"
-          $args:
-            - defaultKms: local
-              network: kovan
-              rpcUrl: https://kovan.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
               gas: 1000001
               ttl: 31104001
         did:ethr:goerli:
@@ -282,6 +258,19 @@ didDiscovery:
         - $require: '@veramo/did-manager#AliasDiscoveryProvider'
         - $require: '@veramo/data-store#DataStoreDiscoveryProvider'
 
+# credential-LD Plugin
+credentialIssuerLD:
+  $require: '@veramo/credential-ld#CredentialIssuerLD'
+  $args:
+    - suites:
+        - $require: '@veramo/credential-ld#VeramoEd25519Signature2018'
+        - $require: '@veramo/credential-ld#VeramoEcdsaSecp256k1RecoverySignature2020'
+      contextMaps:
+        # The LdDefaultContext is a "catch-all" for now.
+        - $require: '@veramo/credential-ld?t=object#LdDefaultContexts'
+        - $require: '@transmute/credentials-context?t=object#contexts'
+        #  others should be included here
+
 # Agent
 agent:
   $require: "@veramo/core#Agent"
@@ -294,7 +283,8 @@ agent:
         - $ref: /didDiscovery
         - $ref: /messageHandler
         - $require: "@veramo/did-comm#DIDComm"
-        - $require: "@veramo/credential-w3c#CredentialIssuer"
+        - $require: '@veramo/credential-w3c#CredentialPlugin'
+        - $ref: /credentialIssuerLD
         - $require: "@veramo/selective-disclosure#SelectiveDisclosure"
         - $require: "@veramo/data-store#DataStore"
           $args:
