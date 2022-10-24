@@ -11,6 +11,6 @@
   },
   "dependencies": {
     "@veramo/cli": "^4.0.2",
-    "agent-explore": "^1.6.0"
+    "agent-explore": "1.8.2"
   }
 }

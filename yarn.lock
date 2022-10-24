@@ -1588,10 +1588,10 @@ agent-base@6, agent-base@^6.0.2:
   dependencies:
     debug "4"
 
-agent-explore@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/agent-explore/-/agent-explore-1.6.0.tgz#e534c1ab911a537918d0d275aea98207b7ed6b02"
-  integrity sha512-q2TJnf9I4kdn5U7gJoHF9R5WWzoprEIvjU4QJN2HvDQeNo6XgD0jq1nT7b2aY9+KSKnNhmJyDJpeffiQ+airyw==
+agent-explore@1.8.2:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/agent-explore/-/agent-explore-1.8.2.tgz#29deb7a685bfcc285fd651d7e613820ad3d4c34d"
+  integrity sha512-BGS+Q84rQXVWz6tX/JfZHvRfHN0YcGoUFB1SKqrzl1BFq8R6q7W0Ty54RgwE9UZILbaU9ijqr5xR6oNZp7BP+A==
   dependencies:
     commander "^7.0.0"
     express "^4.17.1"
