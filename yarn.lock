@@ -1236,7 +1236,7 @@
     crypto-ld "^7.0.0"
     json-stringify-deterministic "^1.0.7"
 
-"@veramo/cli@^4.0.2":
+"@veramo/cli@4.0.2":
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/@veramo/cli/-/cli-4.0.2.tgz#fd17dd812480dac495e0d3292a3b0db71c7db260"
   integrity sha512-OGN5oebadhRpYQO0pOlZc31h1bONBvho7u4eVOdNmIKicfAUl4jedAqtBhEEIw4G0xfVNbJJFl1txGIDiSOMrA==
@@ -1588,7 +1588,7 @@ agent-base@6, agent-base@^6.0.2:
   dependencies:
     debug "4"
 
-agent-explore@^1.8.3:
+agent-explore@1.8.3:
   version "1.8.3"
   resolved "https://registry.yarnpkg.com/agent-explore/-/agent-explore-1.8.3.tgz#29ec99e6cf63378a06d5567ca52b17ea65e7d9cb"
   integrity sha512-GncDtC0yH0IPe9t4ABujvpj0p1wMiciDMOBqJwN6+++muVyjDxiDiEYSDiu+D/X1lXDP/ggWmYTL9PAnVK5JXg==
