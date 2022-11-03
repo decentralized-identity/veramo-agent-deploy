@@ -6,8 +6,8 @@ services:
     ports:
       - "3332:3332"
     environment:
-      DEBUG: daf*
+      DEBUG: veramo*
       PORT: 3332
-    command: ["yarn", "daf", "server", "--config=/config/agent-local.yml"]
+    command: ["yarn", "veramo", "server", "--config=/config/agent-local.yml"]
     volumes:
       - ./config:/config
