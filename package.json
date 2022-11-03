@@ -10,7 +10,7 @@
     "dev": "yarn veramo server --config=./config/agent-local.yml"
   },
   "dependencies": {
-    "@veramo/cli": "^4.0.2",
+    "@veramo/cli": "^4.1.1",
     "agent-explore": "^1.8.3"
   }
 }
