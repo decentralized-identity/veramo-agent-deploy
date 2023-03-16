@@ -30,6 +30,7 @@ constants:
     - didManagerGetProviders
     - didManagerFind
     - didManagerGet
+    - didManagerGetByAlias
     - didManagerCreate
     - didManagerGetOrCreate
     - didManagerImport
@@ -96,7 +97,7 @@ server:
     $ref: /constants/port
   use:
     # CORS
-    - - $require: "cors"
+    - - $require: "cors?t=function#default"
 
     # Add agent to the request object
     - - $require: "@veramo/remote-server?t=function#RequestWithAgentRouter"
@@ -111,7 +112,8 @@ server:
     - - /messaging
       - $require: "@veramo/remote-server?t=function#MessagingRouter"
         $args:
-          - metaData:
+          - save: true
+            metaData:
               type: DIDComm
               value: https
 
@@ -303,6 +305,7 @@ agent:
         - $require: "@veramo/did-comm#DIDComm"
         - $require: '@veramo/credential-w3c#CredentialPlugin'
         - $ref: /credentialIssuerLD
+        - $require: "@veramo/credential-eip712#CredentialIssuerEIP712"
         - $require: "@veramo/selective-disclosure#SelectiveDisclosure"
         - $require: "@veramo/data-store#DataStore"
           $args:

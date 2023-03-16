@@ -1,7 +1,8 @@
-FROM node:16
+FROM node:19
 WORKDIR /usr/src/app
 COPY package.json .
 COPY yarn.lock .
 ADD config config
-RUN yarn
+RUN yarn install --production
 CMD ["yarn", "start"]
+EXPOSE 3332

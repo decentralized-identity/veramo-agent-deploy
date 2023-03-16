@@ -8,7 +8,7 @@
       "identity",
       "verifiable-credentials"
     ],
-    "addons": ["heroku-postgresql:hobby-dev"],
+    "addons": ["heroku-postgresql:mini"],
     "env": {
       "BASE_URL": {
         "description": "The url for which your DID will be based on",
