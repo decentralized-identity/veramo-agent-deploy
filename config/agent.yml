@@ -190,6 +190,8 @@ didResolver:
               $ref: /ethr-did-resolver
             web:
               $ref: /web-did-resolver
+            peer:
+              $ref: /peer-did-resolver
             key:
               $ref: /did-key-resolver
             elem:
@@ -216,6 +218,9 @@ universal-resolver:
 
 did-key-resolver:
   $require: '@veramo/did-provider-key?t=function&p=/key#getDidKeyResolver'
+  
+peer-did-resolver:
+  $require: '@veramo/did-provider-peer?t=function&p=/peer#getResolver'
 
 # Key Manager
 keyManager:
