@@ -275,6 +275,10 @@ didManager:
           $require: "@veramo/did-provider-key#KeyDIDProvider"
           $args:
             - defaultKms: local
+        did:peer:
+          $require: "@veramo/did-provider-peer#PeerDIDProvider"
+          $args:
+            - defaultKms: local
 
 didDiscovery:
   $require: '@veramo/did-discovery#DIDDiscovery'
