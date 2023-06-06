@@ -2,6 +2,8 @@
 
 Please fork this repository (or click the `Use this template` button) before attempting to use it to deploy Veramo. This will allow you to maintain your agent and update it to the latest version as you wish. 
 
+If you want to use the "Deploy to Heroku" button, please make sure to update the link to point to your own fork of the repo.
+
 # Veramo Agent Deploy
 
 **The official Veramo Docker agent is built from this this source.**
@@ -40,9 +42,9 @@ The database connection string for Postgres
 
 ## Deploy to Heroku
 
-You will need to fork this repo, then click the button below and follow the Heroku deploy process:
+You will need to fork this repo, update the link, then click the button below and follow the Heroku deploy process:
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/uport-project/veramo-agent-deploy/tree/next)
 
 Be sure to set the `BASE_URL` correctly, with your App name replacing `APP_NAME` in the URL.
 
