@@ -15,6 +15,8 @@ constants:
     $env: MESSAGING_PATH
   databaseUrl:
     $env: DATABASE_URL
+  huggingFaceToken:
+    $env: HUGGING_FACE_TOKEN
   methods:
     - keyManagerGetKeyManagementSystems
     - keyManagerCreate
@@ -179,6 +181,10 @@ messageHandler:
         - $require: "@veramo/did-jwt#JwtMessageHandler"
         - $require: "@veramo/credential-w3c#W3cMessageHandler"
         - $require: "@veramo/selective-disclosure#SdrMessageHandler"
+        - $require: 'starchat-veramo-plugin#StarchatQuestionMessageHandler'
+          $args: 
+            - hfToken: 
+              $ref: /constants/huggingFaceToken
 
 # DID resolvers
 didResolver:

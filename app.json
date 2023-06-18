@@ -29,6 +29,10 @@
       "MESSAGING_PATH": {
         "description": "The messaging endpoint for your agent",
         "value": "/messaging"
+      },
+      "HUGGING_FACE_TOKEN": {
+        "description": "The access token used for HuggingFace API calls",
+        "value": "secret"
       }
     }
   }
