@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@veramo/cli": "^5.2.0",
-    "agent-explore": "^1.15.0"
+    "agent-explore": "^1.15.0",
+    "starchat-veramo-plugin": "^1.0.1"
   }
 }

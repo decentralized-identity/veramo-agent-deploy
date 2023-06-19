@@ -1636,7 +1636,7 @@
     ws "^8.11.0"
     yaml "^2.1.3"
 
-"@veramo/core-types@^5.1.2":
+"@veramo/core-types@5.1.2", "@veramo/core-types@^5.1.2":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/@veramo/core-types/-/core-types-5.1.2.tgz#c8e6771780ba8b32fc1a582ed012def807a3117c"
   integrity sha512-IVmbcn9yBE8v/x29nGvScCT9sIKu/iYJ8+dqN3jIVL2t//HRvNhrHsxw83Wb6DGqr46r0ebM+kEnPfZAAxdk/w==
@@ -1721,6 +1721,23 @@
     typeorm "^0.3.10"
     uuid "^9.0.0"
 
+"@veramo/did-comm@5.1.2":
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/@veramo/did-comm/-/did-comm-5.1.2.tgz#30261f7d3f2570529829c61877f6b7259a77d30e"
+  integrity sha512-VNIVgTz+U1/YUfnGwlwfl4CAbU5nBU7uKu4UF8Y6FmavzHdRwVBB9jblBchoqtRwLY5r8ukpwFWD2HylzS03vA==
+  dependencies:
+    "@ethersproject/signing-key" "^5.7.0"
+    "@stablelib/ed25519" "^1.0.3"
+    "@veramo/core-types" "^5.1.2"
+    "@veramo/message-handler" "^5.1.2"
+    "@veramo/utils" "^5.1.2"
+    cross-fetch "^3.1.4"
+    debug "^4.3.3"
+    did-jwt "^6.9.0"
+    did-resolver "^4.0.1"
+    uint8arrays "^3.0.0"
+    uuid "^9.0.0"
+
 "@veramo/did-comm@^5.2.0":
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/@veramo/did-comm/-/did-comm-5.2.0.tgz#20692746f2604aa0c3c966de0cea272fc40c4e2f"
@@ -1757,7 +1774,7 @@
     did-jwt "^6.9.0"
     did-resolver "^4.0.1"
 
-"@veramo/did-manager@^5.1.2":
+"@veramo/did-manager@5.1.2", "@veramo/did-manager@^5.1.2":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/@veramo/did-manager/-/did-manager-5.1.2.tgz#fca0e458619226511165e753ea287c39a8979abc"
   integrity sha512-cp847YVlNzXZS2L8x/h3LIeH3qv1WEeHdXdVq2yDvAVFIr69X84K2eGlSueTUGc3Jkk+vUL82GYsOW8aVZ25Lg==
@@ -1851,7 +1868,7 @@
     debug "^4.3.3"
     did-resolver "^4.0.1"
 
-"@veramo/key-manager@^5.1.2":
+"@veramo/key-manager@5.1.2", "@veramo/key-manager@^5.1.2":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/@veramo/key-manager/-/key-manager-5.1.2.tgz#4d0a978d175c4f478f385770125ac25daeeecee1"
   integrity sha512-o7sNQfDjdJO0MkV+wwUL5wQwZXBG6hMXdbaTqwZgdA0btE9267anx9Cy7dpLnfsRWvHM3EsLFTuZdL9mytMIgQ==
@@ -1890,7 +1907,7 @@
     elliptic "^6.5.4"
     uint8arrays "^3.0.0"
 
-"@veramo/message-handler@^5.1.2":
+"@veramo/message-handler@5.1.2", "@veramo/message-handler@^5.1.2":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/@veramo/message-handler/-/message-handler-5.1.2.tgz#3dd73023db875aade6483f2132263166347dd2e5"
   integrity sha512-fov1wFOe5f4YoNpmjlo8pRyG2GJI0qlSW0Zvo3umhbfMc/yohcx8zAi4ZaR3uqxPGfsdsbCO2zU8+VSfUqcH0Q==
@@ -1946,7 +1963,7 @@
     debug "^4.3.3"
     url-parse "^1.5.4"
 
-"@veramo/utils@^5.2.0":
+"@veramo/utils@^5.1.2", "@veramo/utils@^5.2.0":
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/@veramo/utils/-/utils-5.2.0.tgz#7797a980a7728da4647101d5eb3c778b4c71d504"
   integrity sha512-bzpwnVPKI8F3dFsPWlp8Dzl2MTjlAxRteAKKrwyJy2RB9Wjq7kpmrikHYYDWoZqNHnPFhyNuqbHD5KxTnBSgpg==
@@ -5261,6 +5278,19 @@ ssri@^8.0.0, ssri@^8.0.1:
   integrity sha512-97qShzy1AiyxvPNIkLWoGua7xoQzzPjQ0HAH4B0rWKo7SZ6USuPcrUiAFrws0UH8RrbWmgq3LMTObhPIHbbBeQ==
   dependencies:
     minipass "^3.1.1"
+
+starchat-veramo-plugin@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/starchat-veramo-plugin/-/starchat-veramo-plugin-1.0.1.tgz#b9e980bd32a2655585326b91c96ea2dd8da6670b"
+  integrity sha512-y20NVgwC69bwsOay5AnD3WGKLnRtNEl48dMHjESp2uvGrSGXAkivOoyRaKjL7lnRQXb5Kbs7/xPry0nuemrfDw==
+  dependencies:
+    "@veramo/core-types" "5.1.2"
+    "@veramo/did-comm" "5.1.2"
+    "@veramo/did-manager" "5.1.2"
+    "@veramo/key-manager" "5.1.2"
+    "@veramo/message-handler" "5.1.2"
+    debug "^4.3.4"
+    uuid "^9.0.0"
 
 statuses@2.0.1:
   version "2.0.1"
