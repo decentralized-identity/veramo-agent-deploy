@@ -5279,10 +5279,10 @@ ssri@^8.0.0, ssri@^8.0.1:
   dependencies:
     minipass "^3.1.1"
 
-starchat-veramo-plugin@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/starchat-veramo-plugin/-/starchat-veramo-plugin-1.0.3.tgz#e38e8c3026846672b36461e4a716b41b59e17855"
-  integrity sha512-rbKXF4mlk7sQ4vVaGTyqrmpPaQgRuWfRftjC3dauihQISNkyY0VTTc3mJWLHcWKhWNO/evRBvU6/BbLwa/GXYA==
+starchat-veramo-plugin@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/starchat-veramo-plugin/-/starchat-veramo-plugin-1.0.4.tgz#f28d1daf0fb5be6b04d322299c9a2fee396b5836"
+  integrity sha512-zw+v2KHOyfKYx1fc7kUAZ0PKXxBGbqJiKhac69vafxxg913c4IkoI8AWUdmT9NFJPO216R63bESAisEoj1VnPg==
   dependencies:
     "@veramo/core-types" "5.1.2"
     "@veramo/did-comm" "5.1.2"
