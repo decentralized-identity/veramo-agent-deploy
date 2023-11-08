@@ -161,7 +161,7 @@ messageHandler:
         - $require: "@veramo/did-jwt#JwtMessageHandler"
         - $require: "@veramo/credential-w3c#W3cMessageHandler"
         - $require: "@veramo/selective-disclosure#SdrMessageHandler"
-        - $require: 'ml-veramo-message-handler#MLTextGenerationQuestionMessageHandler'
+        - $require: 'ml-veramo-message-handler#MLTextGenerationPromptMessageHandler'
           $args: 
             - hfToken: 
               $ref: /constants/huggingFaceToken
