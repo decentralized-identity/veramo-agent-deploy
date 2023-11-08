@@ -4319,10 +4319,10 @@ mkdirp@^1.0.3, mkdirp@^1.0.4:
   resolved "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
-ml-veramo-message-handler@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/ml-veramo-message-handler/-/ml-veramo-message-handler-1.0.1.tgz#64f72a9fd696690c5e17f7b291543ad780f14b18"
-  integrity sha512-iQowe9qbAPo0+801Z+oeflwmz3ZbtnK3qh0GVQzDW8skiCT3Us3FO8RH7aodImnR3F9o8xSehy5obCZY4RedCw==
+ml-veramo-message-handler@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/ml-veramo-message-handler/-/ml-veramo-message-handler-1.0.4.tgz#0662641bcb53b4ebce2c0273c8b3371ab23da446"
+  integrity sha512-qmdHbupffskc7Qxzguss6J8pZLbWNlxblqAL3oz+cLw/s9hLF3xrtzbETsEucL39uIRUVnPHvtyLZV0r6qcFNA==
   dependencies:
     "@veramo/core-types" "5.1.2"
     "@veramo/did-comm" "5.1.2"
