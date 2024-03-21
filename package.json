@@ -12,6 +12,6 @@
   "dependencies": {
     "@veramo/cli": "^5.5.4-next.22",
     "agent-explore": "^1.15.0",
-    "ml-veramo-message-handler": "^1.0.5"
+    "ml-veramo-message-handler": "^1.0.6"
   }
 }
