@@ -6,7 +6,7 @@ If you want to use the "Deploy to Heroku" button, please make sure to update the
 
 # Veramo Agent Deploy
 
-**The official Veramo Docker agent is built from this this source.**
+**The official Veramo Docker agent is built from this source.**
 
 ## Environment variables
 
