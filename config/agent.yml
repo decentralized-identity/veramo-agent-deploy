@@ -230,7 +230,7 @@ did-key-resolver:
 did-cheqd-resolver:
   $require: '@cheqd/did-provider-cheqd?t=function&p=/cheqd#getResolver'
   $args:
-    - url: 'https://resolver.cheqd.net/1.0/identifiers/'
+    - url: https://resolver.cheqd.net/1.0/identifiers/
 
 # Key Manager
 keyManager:
