@@ -3,6 +3,8 @@ version: 3.0
 constants:
   baseUrl:
     $env: BASE_URL
+  updatedBaseUrl:
+    $env: UPDATED_BASE_URL
   port:
     $env: PORT
   apiKey:
@@ -173,7 +175,7 @@ server:
         - agent:
             $ref: /agent
           baseUrl:
-            $ref: /constants/baseUrl
+            $ref: /constants/updatedBaseUrl
           messagingServiceEndpoint:
             $ref: /constants/messagingEndpoint
 
