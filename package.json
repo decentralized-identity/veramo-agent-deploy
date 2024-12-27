@@ -2,14 +2,18 @@
   "name": "veramo-agent-deploy",
   "version": "1.0.0",
   "description": "General purpose Veramo Agent configuration deployments",
-  "repository": "https://github.com/uport-project/veramo-agent-deploy",
-  "author": "jason.healy@mesh.xyz",
+  "repository": "https://github.com/enjora/veramo-agent-deploy",
+  "author": "enjora@me.com",
   "license": "Apache-2.0",
   "scripts": {
     "start": "NODE_ENV=production yarn veramo server --config=./config/agent.yml",
     "dev": "yarn veramo server --config=./config/agent-local.yml"
   },
+  "engines": {
+    "node": "20.0"
+  },
   "dependencies": {
+    "@cheqd/did-provider-cheqd": "^4.4.1",
     "@veramo/cli": "^6.0.0",
     "agent-explore": "^1.71.5"
   }

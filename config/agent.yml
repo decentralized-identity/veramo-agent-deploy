@@ -3,6 +3,8 @@ version: 3.0
 constants:
   baseUrl:
     $env: BASE_URL
+  updatedBaseUrl:
+    $env: UPDATED_BASE_URL
   port:
     $env: PORT
   apiKey:
@@ -15,6 +17,14 @@ constants:
     $env: MESSAGING_PATH
   databaseUrl:
     $env: DATABASE_URL
+  cosmosTestNetworkAccountPrivateKey:
+    $env: TEST_NETWORK_ACCOUNT_COSMOS_PRIVATE_KEY
+  cosmosMainNetworkAccountPrivateKey:
+    $env: MAIN_NETWORK_ACCOUNT_COSMOS_PRIVATE_KEY
+  cheqdTestnetRpcUrl:
+    $env: CHEQD_TESTNET_RPC_URL
+  cheqdMainnetRpcUrl:
+    $env: CHEQD_MAINNET_RPC_URL
   methods:
     - keyManagerGetKeyManagementSystems
     - keyManagerCreate
@@ -165,7 +175,7 @@ server:
         - agent:
             $ref: /agent
           baseUrl:
-            $ref: /constants/baseUrl
+            $ref: /constants/updatedBaseUrl
           messagingServiceEndpoint:
             $ref: /constants/messagingEndpoint
 
@@ -192,6 +202,8 @@ didResolver:
               $ref: /web-did-resolver
             key:
               $ref: /did-key-resolver
+            cheqd:
+              $ref: /did-cheqd-resolver
             elem:
               $ref: /universal-resolver
             io:
@@ -216,6 +228,11 @@ universal-resolver:
 
 did-key-resolver:
   $require: '@veramo/did-provider-key?t=function&p=/key#getDidKeyResolver'
+
+did-cheqd-resolver:
+  $require: '@cheqd/did-provider-cheqd?t=function&p=/cheqd#getResolver'
+  $args:
+    - url: https://resolver.cheqd.net/1.0/identifiers/
 
 # Key Manager
 keyManager:
@@ -244,7 +261,8 @@ didManager:
         $require: "@veramo/data-store#DIDStore"
         $args:
           - $ref: /dbConnection
-      defaultProvider: did:ethr:goerli
+      #      defaultProvider: did:ethr:goerli
+      defaultProvider: did:cheqd:testnet
       providers:
         did:ethr:
           $require: "@veramo/did-provider-ethr#EthrDIDProvider"
@@ -262,6 +280,20 @@ didManager:
               rpcUrl: https://rinkeby.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
               gas: 1000001
               ttl: 31104001
+        did:cheqd:mainnet:
+          $require: '@cheqd/did-provider-cheqd#CheqdDIDProvider'
+          $args:
+            - defaultKms: local
+              cosmosPayerMnemonic: /constants/cosmosMainNetworkAccountPrivateKey
+              networkType: mainnet
+              rpcUrl: /constants/cheqdMainnetRpcUrl
+        did:cheqd:testnet:
+          $require: '@cheqd/did-provider-cheqd#CheqdDIDProvider'
+          $args:
+            - defaultKms: local
+              cosmosPayerMnemonic: /constants/cosmosTestNetworkAccountPrivateKey
+              networkType: testnet
+              rpcUrl: /constants/cheqdTestnetRpcUrl
         did:web:
           $require: "@veramo/did-provider-web#WebDIDProvider"
           $args:

@@ -5,6 +5,14 @@ constants:
   port: 3332
   secretKey: 29739248cad1bd1a0fc4d9b75cd4d2990de535baf5caadfdf8d8f86664aa830c
   databaseFile: ./db/database.sqlite
+  cosmosTestNetworkAccountPrivateKey:
+    $env: 0x8447eb8eb811c9853de614393abdc3dc25f8234d993fdf626c5beb215f4adc8e
+  cosmosMainNetworkAccountPrivateKey:
+    $env: 0x8447eb8eb811c9853de614393abdc3dc25f8234d993fdf626c5beb215f4adc8e
+  cheqdTestnetRpcUrl:
+    $env: https://rpc.cheqd.network
+  cheqdMainnetRpcUrl:
+    $env: https://rpc.cheqd.net
   methods:
     - keyManagerGetKeyManagementSystems
     - keyManagerCreate
@@ -199,6 +207,11 @@ universal-resolver:
 did-key-resolver:
   $require: '@veramo/did-provider-key?t=function&p=/key#getDidKeyResolver'
 
+did-cheqd-resolver:
+  $require: '@cheqd/did-provider-cheqd?t=function&p=/cheqd#getResolver'
+  $args:
+    - url: 'https://resolver.cheqd.net/1.0/identifiers/'
+
 # Key Manager
 keyManager:
   $require: "@veramo/key-manager#KeyManager"
@@ -244,6 +257,20 @@ didManager:
               rpcUrl: https://goerli.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
               gas: 1000001
               ttl: 31104001
+        did:cheqd:mainnet:
+          $require: '@cheqd/did-provider-cheqd#CheqdDIDProvider'
+          $args:
+            - defaultKms: local
+              cosmosPayerMnemonic: /constants/cosmosMainNetworkAccountPrivateKey
+              networkType: mainnet
+              rpcUrl: /constants/cheqdMainnetRpcUrl
+        did:cheqd:testnet:
+          $require: '@cheqd/did-provider-cheqd#CheqdDIDProvider'
+          $args:
+            - defaultKms: local
+              cosmosPayerMnemonic: /constants/cosmosTestNetworkAccountPrivateKey
+              networkType: testnet
+              rpcUrl: /constants/cheqdTestnetRpcUrl
         did:web:
           $require: "@veramo/did-provider-web#WebDIDProvider"
           $args:

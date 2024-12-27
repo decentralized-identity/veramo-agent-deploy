@@ -1,14 +1,14 @@
 {
     "name": "Veramo Agent",
     "description": "Minimal deployment of @veramo/cli agent server to Heroku",
-    "repository": "https://github.com/uport-project/veramo-agent-deploy",
+    "repository": "https://github.com/enjora/veramo-agent-deploy",
     "keywords": [
       "node",
       "veramo",
       "identity",
       "verifiable-credentials"
     ],
-    "addons": ["heroku-postgresql:mini"],
+    "addons": ["heroku-postgresql:essential-0"],
     "env": {
       "BASE_URL": {
         "description": "The url for which your DID will be based on",
