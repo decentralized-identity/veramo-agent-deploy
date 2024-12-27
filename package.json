@@ -9,7 +9,7 @@
     "start": "NODE_ENV=production yarn veramo server --config=./config/agent.yml",
     "dev": "yarn veramo server --config=./config/agent-local.yml"
   },
-    "engines": {
+  "engines": {
     "node": "20.0"
   },
   "dependencies": {
